@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int foo [100][100],n,i,j,m;
+    cout << "n=";
+    cin >>  n;
+    cout << "m=";
+    cin >> m;
+    for (i=0;i<m;i++) {
+        for (j=0;j<n;j++) {
+            cout << "foo["<<i<<"] [" << j << "]";
+            cin >> foo[i][j];
+        }
+    }
+    for (i=0;i<m;i++){
+        for (j=0;j<n;j++) {
+            cout << foo[i][j] << " ";
+        }
+
+            cout << endl;
+
+        cout << endl;
+    }
+    for (i=0;i<m;i++) {
+        for (j=0;j<n;j++){
+            if (foo[i][j]%2==0) {
+                cout << foo [i][j];
+            }
+        }
+    }
+    return 0;
+}
