@@ -1,0 +1,46 @@
+///////// primek osszege matrixban
+
+//////filebol olvasa be inputtxt
+
+////mukodik
+
+
+
+
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    int foo[100][100],i,j,n,oszto,S=0;
+    ifstream input("input.txt");
+    input >> n;
+    bool prim = false;
+    for (i=0; i<n; i++) {
+        for (j=0; j<n; j++) {
+            input >> foo [i][j];
+        }
+    }
+    for (i=0; i<n; i++) {
+        for (j=0; j<n; j++) {
+            bool prim = true;
+            for (oszto=2; oszto<foo[i][j]/2+1; oszto++) {
+                if (foo[i][j] %oszto ==0) {
+                    prim = false;
+
+                }
+
+            }
+            if (prim==true) {
+                S+=foo[i][j];
+            }
+        }
+
+    }
+    cout << S << endl;
+    return 0;
+
+
+}
